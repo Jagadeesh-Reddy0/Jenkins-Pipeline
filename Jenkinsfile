@@ -2,14 +2,14 @@
 pipeline {
 	agent none
   stages {
-  	stage('Maven Install') {
+  	stage('Nginx Install') {
     	agent {
       	docker {
-        	image 'maven:3.5.0'
+        	image 'Nginx'
         }
       }
       steps {
-      	sh 'mvn clean install'
+      	sh 'clean install'
       }
     }
   }
