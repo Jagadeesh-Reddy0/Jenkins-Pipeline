@@ -2,10 +2,10 @@
 pipeline {
 	agent none
   stages {
-  	stage('Nginx Install') {
+  	stage('nginx Install') {
     	agent {
       	docker {
-        	image 'Nginx'
+        	image 'nginx'
         }
       }
       steps {
