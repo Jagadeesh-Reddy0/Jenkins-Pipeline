@@ -1,16 +1,14 @@
 #!groovy
-pipeline {
-	agent none
-  stages {
-  	stage('nginx Install') {
-    	agent {
-      	docker {
-        	image 'nginx'
-        }
-      }
-      steps {
-      	sh 'clean install'
-      }
+pipeline{
+    agent any
+    tools{
+        maven 'maven_3_5_0'
     }
-  }
+    Stages{
+        stage('Build Maven'){
+            steps{
+                sh 'mvn clean build'
+            }
+        }
+    }
 }
