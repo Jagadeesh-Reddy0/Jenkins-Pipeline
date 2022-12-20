@@ -4,7 +4,7 @@ pipeline{
     tools{
         maven 'maven_3_5_0'
     }
-    Stages{
+    Stages {
         stage('Build Maven'){
             steps{
                 sh 'mvn clean build'
