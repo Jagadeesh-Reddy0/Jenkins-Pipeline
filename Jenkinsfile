@@ -1,14 +1,11 @@
 #!groovy
-pipeline{
-    agent any
-    tools{
-        maven 'maven_3_5_0'
+pipeline {
+  agent
+  stages {
+    stage ('Maven Install') {
+      steps {
+        sh 'mvn clean install'
+      }
     }
-    Stages {
-        stage('Build Maven'){
-            steps{
-                sh 'mvn clean build'
-            }
-        }
-    }
+  }
 }
