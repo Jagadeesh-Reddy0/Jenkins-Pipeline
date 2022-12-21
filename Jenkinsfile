@@ -9,7 +9,7 @@ pipeline{
         }
         stage("Build dockerimage from Dockerfile"){
             steps{
-                sh "docker build -t docker_image ."
+                sh "docker build -t nginx ."
             }
         }
     }
